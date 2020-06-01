@@ -12,7 +12,6 @@ pool:
   - npm
 
 variables:
-  buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '3.1.100'
 
@@ -30,8 +29,6 @@ steps:
 
 - script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
   displayName: 'Compile Sass assets'
-  workingDirectory: $(wwwrootDir)
-
 
 - task: gulp@1
   displayName: 'Run gulp tasks'
